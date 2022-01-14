@@ -1,6 +1,6 @@
-# TYPESCRIPT BASE PROJECT WITH MONGOOSE AND MOCHA TESTS
+# EXPRESS MONGODB TYPESCRIPT BASE PROJECT WITH MOCHA TESTS
 
-This is a basic Typescript project configuration with mongoose and Mocha tests.
+This is a basic Typescript project configuration with Express, Mongodb and Mocha tests (used most of time for backend applications).
 
 ## USAGE 
 
