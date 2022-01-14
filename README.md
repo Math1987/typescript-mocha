@@ -1,6 +1,6 @@
-# TYPESCRIPT BASE PROJECT WITH MOCHA TESTS
+# EXPRESS TYPESCRIPT BASE PROJECT WITH MOCHA TESTS
 
-This is a basic project configuration with Typescript and Mocha tests (used most of time for backend applications).
+This is a basic Typescript project configuration with Express and Mocha tests (used most of time for backend applications).
 
 ## USAGE 
 
