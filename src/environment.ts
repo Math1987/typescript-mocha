@@ -3,7 +3,7 @@ let environment : {
     db : string
 } = {
     mode : "dev",
-    db : "mongodb://localhost:27017/mydbtest"
+    db : "mongodb://localhost:27017/myLocalDb"
 }
 if ( process.env.MODE === "prod" ){
     environment.mode = "prod" ;

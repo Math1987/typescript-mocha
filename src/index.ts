@@ -1,12 +1,20 @@
 import { init as initDatas } from "./datas/index.data" ;
-console.log('Hello world!');
+import bodyParser from "body-parser" ;
 
 initDatas();
 import express from "express";
 
 export const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 import routeExample from "./routes/example.route" ;
-app.use(routeExample);
+import userRoute from "./routes/user.route" ;
 
-console.log('Hello world!');
+app.use(routeExample);
+app.use("/u",userRoute);
+
+
+if (  process.env.MODE === "dev" ){
+    app.listen(17000) ;
+}

@@ -1,6 +1,8 @@
 import mongoose from "mongoose" ; 
 import environment from "../environment" ;
 import { init as initExample } from "./example.data" ;
+import { init as initUser } from "./user.data" ;
+
 
 export let db : mongoose.Connection ;
 /**
@@ -15,6 +17,7 @@ export const init = async (): Promise<mongoose.Connection> => {
     //load your collections 
     //exemple db.model("user", userSchema)
     initExample(db)
+    initUser(db);
     return db ;
 
 }
