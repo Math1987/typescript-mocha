@@ -43,5 +43,19 @@ describe('route example', () => {
             done();
         });
     })
+    it("updateUser: should return a user updated", done => {
+        request(app)
+        .post('/u/update')
+        .set({ 'authorization': token, Accept: 'application/json' })
+        .send({ language : "fr"})
+        .set('Accept', 'application/json')
+        .expect('Content-Type', /json/)
+        .end( ( err, res) => {
+            expect(res.statusCode).equal(200) ;
+            expect(res.body.email).equal("albert@test.com");
+            expect(res.body.language).equal("fr");
 
+            done();
+        });
+    })
 });

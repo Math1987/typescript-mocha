@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { verifyAndAddUser, login as loginUser, create as createUser, get as getUser} from "../controller/user.controller" ;
+import { verifyAndAddUser, login as loginUser, create as createUser, get as getUser, update as updateUser} from "../controller/user.controller" ;
 
 const route = Router();
 
@@ -10,5 +10,7 @@ route.post('/login', loginUser );
 route.use(verifyAndAddUser);
 //@ts-ignore
 route.get('/get', getUser );
+//@ts-ignore
+route.post('/update', updateUser );
 
 export default route ;

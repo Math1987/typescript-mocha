@@ -5,6 +5,7 @@ export type type = {
     email : string,
     password : string,
     token? : string,
+    language? : string
 };
 export type typeInDB = type & {
     _id : ObjectId 
@@ -13,7 +14,8 @@ export type typeInDB = type & {
 export const schema = new mongoose.Schema({
     email : { type : String, index : true, unique : true},
     password : { type : String, required : true},
-    token : { type : String, required : false}
+    token : { type : String, required : false},
+    language : { type : String, required : false}
 });
 let model : mongoose.Model<type> ;
 

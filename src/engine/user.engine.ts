@@ -9,16 +9,22 @@ export interface UserRequest extends Request {
     user : any ;
 }
 
-export const createUser = ( email : string, password : string ) => {
+export const createUser = ( datas : any ) => {
     return new Promise((resolve, reject) => {
 
-        bcrypt.hash(password, saltRounds, function(err, hash) {
+        bcrypt.hash(datas.password, saltRounds, function(err, hash) {
             // Store hash in your password DB.
             if ( hash ){                
-                createUserD({ email, password : hash}).then( async u => {
+                createUserD({ 
+                    email : datas.email, 
+                    password : hash,
+                    language : (datas.language? datas.language : "en") 
+                
+                }).then( async u => {
                     let user = await createToken( u!._id.toString() );    
                     resolve(user);
                 }).catch( err => {
+                    console.log(err);
                     reject(err);
                 });
             }else {
